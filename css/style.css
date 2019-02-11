@@ -1,0 +1,7 @@
+#showcase{
+position: relative;
+background: url('../img/faq_page.jpg');
+min-height: 552px;
+background-position: center center;
+/* background-size: cover; */
+}
