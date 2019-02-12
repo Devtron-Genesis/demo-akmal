@@ -140,6 +140,16 @@ body {
   .slope h3, .slope p, .slope .form-control, .slope .btn, footer, nav, .showcase-style, .tabs-style, #accordian {
       font-family: AvenirLTStd-BookOblique;
   }
+  input[type="submit"] {
+    padding: 9px 17px;
+    border: 1px solid #629548;
+    color: #629548;
+  }
+  input[type="submit"]:hover {
+      border: 1px solid white;
+      background-color: #629548 !important;
+      color: white;
+  }
 /* end form section */
 
 /* footer */

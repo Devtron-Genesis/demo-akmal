@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Demo Website</title>
+	  <title>Demo Website</title>
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -36,7 +36,7 @@
   <!-- Navbar -->
     <nav class="navbar navbar-expand-sm navbar-light bg-white py-2 fixed-top">
         <div class="container">
-            <a href="index.html" class="navbar-expand">
+            <a href="index.php" class="navbar-expand">
                 <img src="img/logo.png" style="width: 120px; height:65px;" alt="logo img">
             </a>
             <!-- Top Menu -->
@@ -376,6 +376,6 @@
         </div>
       </div>
     </footer>
-    <!-- End Footer
+    <!-- End Footer -->
 </body>
 </html>
