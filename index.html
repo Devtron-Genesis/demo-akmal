@@ -33,90 +33,94 @@
     </script>
 </head>
 <body>
-  <!-- Top Menu -->
-  <div class="container-fluid">
-      <div class="row">
-          <div class="col-md-6"></div>
-          <div class="col-md-6 top-menu">
-            <a href="#">Comapny</a>
-            <a href="#">Careers</a>
-            <a href="#">Contact</a>
-          </div>
-        </div>
-  </div>
-  <!-- end top menu -->
-
   <!-- Navbar -->
-    <nav class="navbar navbar-expand-sm navbar-light bg-white py-2">
+    <nav class="navbar navbar-expand-sm navbar-light bg-white py-2 fixed-top">
         <div class="container">
             <a href="index.html" class="navbar-expand">
                 <img src="img/logo.png" style="width: 120px; height:65px;" alt="logo img">
             </a>
-            <button class="navbar-toggler" data-toggle="collapse" data-target="#demo-nav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="demo-nav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Products
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Commerce & Sales</a>
-                            <a class="dropdown-item" href="#">Marketing</a>
-                            <a class="dropdown-item" href="#">Customer Service</a>
-                            <a class="dropdown-item" href="#">AdviceBots</a>
-                            <a class="dropdown-item" href="#">Omnichannel</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Industries
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Retail</a>
-                            <a class="dropdown-item" href="#">Brand Manufacturing</a>
-                            <a class="dropdown-item" href="#">Fashion and Lifestyle</a>
-                            <a class="dropdown-item" href="#">Telecommunications</a>
-                            <a class="dropdown-item" href="#">Banking and Finance</a>
-                            <a class="dropdown-item" href="#">B2B Commerce</a>
-                            <a class="dropdown-item" href="#">Services</a>
-                        </div>
-                    </li>
-                    <li class="nav-item"><a href="#" class="nav-link">Examples</a></li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            How it Works
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Technology</a>
-                            <a class="dropdown-item" href="#">FAQ</a>
-                            <a class="dropdown-item" href="#">Innovation Lab</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Partners
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Solution Partners</a>
-                            <a class="dropdown-item" href="#">Technology Partner</a>
-                            <a class="dropdown-item" href="#">Become a Partner</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Media Center
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">News</a>
-                            <a class="dropdown-item" href="#">Resources</a>
-                            <a class="dropdown-item" href="#">Events</a>
-                        </div>
-                    </li>
-                </ul>
-                <button class="btn btn-primary ml-2" type="button">Get Started</button>
-            </div>
+            <!-- Top Menu -->
+            <div class="container-fluid mt-4">
+                <div class="row">
+                    <div class="col-md-6"></div>
+                    <div class="col-md-6 top-menu">
+                      <a href="#">Comapny</a>
+                      <a href="#">Careers</a>
+                      <a href="#">Contact</a>
+                    </div>
+                  </div>
+                  <button class="navbar-toggler" data-toggle="collapse" data-target="#demo-nav">
+                      <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="demo-nav">
+                      <ul class="navbar-nav ml-auto">
+                          <li class="nav-item dropdown">
+                              <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Product
+                                  <i class="fa fa-chevron-down"></i>
+                              </a>
+                              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                  <a class="dropdown-item" href="#">Commerce & Sales</a>
+                                  <a class="dropdown-item" href="#">Marketing</a>
+                                  <a class="dropdown-item" href="#">Customer Service</a>
+                                  <a class="dropdown-item" href="#">AdviceBots</a>
+                                  <a class="dropdown-item" href="#">Omnichannel</a>
+                              </div>
+                          </li>
+                          <li class="nav-item dropdown">
+                              <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Industries
+                                  <i class="fa fa-chevron-down"></i>
+                              </a>
+                              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                  <a class="dropdown-item" href="#">Retail</a>
+                                  <a class="dropdown-item" href="#">Brand Manufacturing</a>
+                                  <a class="dropdown-item" href="#">Fashion and Lifestyle</a>
+                                  <a class="dropdown-item" href="#">Telecommunications</a>
+                                  <a class="dropdown-item" href="#">Banking and Finance</a>
+                                  <a class="dropdown-item" href="#">B2B Commerce</a>
+                                  <a class="dropdown-item" href="#">Services</a>
+                              </div>
+                          </li>
+                          <li class="nav-item"><a href="#" class="nav-link">Examples</a></li>
+                          <li class="nav-item dropdown">
+                              <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  How it Works
+                                  <i class="fa fa-chevron-down"></i>
+                              </a>
+                              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                  <a class="dropdown-item" href="#">Technology</a>
+                                  <a class="dropdown-item" href="#">FAQ</a>
+                                  <a class="dropdown-item" href="#">Innovation Lab</a>
+                              </div>
+                          </li>
+                          <li class="nav-item dropdown">
+                              <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Partners
+                                  <i class="fa fa-chevron-down"></i>
+                              </a>
+                              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                  <a class="dropdown-item" href="#">Solution Partners</a>
+                                  <a class="dropdown-item" href="#">Technology Partner</a>
+                                  <a class="dropdown-item" href="#">Become a Partner</a>
+                              </div>
+                          </li>
+                          <li class="nav-item dropdown">
+                              <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Media Center
+                                  <i class="fa fa-chevron-down"></i>
+                              </a>
+                              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                  <a class="dropdown-item" href="#">News</a>
+                                  <a class="dropdown-item" href="#">Resources</a>
+                                  <a class="dropdown-item" href="#">Events</a>
+                              </div>
+                          </li>
+                      </ul>
+                      <button class="btn btn-primary ml-2 custom-btn" type="button">Get Started</button>
+                  </div>
+                </div>
+            <!-- end top menu -->
         </div>
     </nav>
     <!-- Navbar End -->
@@ -246,12 +250,13 @@
     <!-- end tabs -->
 
     <!-- Form Section -->
-    <section class="slope">
-      <div class="container">
+    <section>
+      <div class="slope-skew"></div>
+      <div class="container-fluid slope">
         <div class="row">
           <div class="col">
             <h3 class="text-center text-white" style="font-size: 30px;">Could not find your question?</h3>
-            <p class="text-center text-white" style="font-size: 20px;">Send us your question.Please add your contact details, if we should inform you once your question<br>
+            <p class="text-center text-white lead">Send us your question.Please add your contact details, if we should inform you once your question<br>
             has been answered.</p>
             <form>
               <div class="form-row">
@@ -291,16 +296,86 @@
     <!-- End Form Section -->
 
     <!-- Footer -->
-    <footer>
+    <footer class="pt-5">
       <div class="container">
         <div class="row">
-          <div class="col">
-            <img src="img/logo.png" alt="footer logo">
-            <p>We are an internationa technology company with the <br> mission to help people make more confident decisions and <br> choose products they'll love.</p>
+          <div class="col-md-4">
+            <img src="img/logo.png" alt="footer logo" style="height: 40px; width: 80px;"><br><br> 
+            <p class="text-dark text-justify">We are an internationa technology company with the mission to help people make more confident decisions and choose products they'll love.</p>
+            <p class="text-dark">&copy;2019 Devtron Genesis.</p>
+            <p>All rights reserved</p>
+            <p>Locations</p>
+            <div class="row ml-2" id="location-bg-image">
+              <div class="col-md-6">
+                <p class="small">Vienna<br>
+                  London <br>
+                  New York<br>
+                  Wroclaw</p>
+              </div>
+              <div class="col-md-6">
+                <p class="small">Sunnywale<br>
+                  Milano<br>
+                  Monterrey</p>
+              </div>
+            </div>    
+          </div>
+          <div class="col-md-2">
+            <h5 class="footer-heading-style">Our Products</h5>
+            <a href="#">Commerce & Sales</a>
+            <a href="#">Marketing</a>
+            <a href="#">Customer Service</a>
+            <a href="#">Advice Chatbot</a>
+            <a href="#">Omnichannel</a>
+            <a href="#">Examples</a>
+          </div>
+          <div class="col-md-2">
+            <h5 class="footer-heading-style">Industry Solutions</h5>
+            <a href="#">Retail </a>
+            <a href="#">Brand Manufaturing</a>
+            <a href="#">Fashion and Lifestyle</a>
+            <a href="#">Telecommunications</a>
+            <a href="#">B2B Commerce</a>
+            <a href="#">Banking and Finance</a>
+            <a href="#">Premium Services</a>
+          </div>
+          <div class="col-md-2">
+            <h5 class="footer-heading-style">Company</h5>
+            <a href="#">Management</a>
+            <a href="#">Careers</a>
+            <a href="#">Media Center</a>
+            <a href="#">Become a Partner</a>
+            <a href="#">Blog</a>
+            <a href="#">Technology</a>
+            <a href="#">Technology Updates</a>
+          </div>
+          <div class="col-md-2">
+            <h5 class="footer-heading-style"> Get in Touch </h5>
+            <a href="#">Contact</a>
+            <a href="#">FAQ</a>
+            <a href="#">30-Day Free Trial</a>
+            <a href="#">See a Demo</a>
+          </div>
+        </div>
+        <div class="row pt-5">
+          <div class="col-md-5 footer-style">
+            <p>Privacy & Cookie Policy</p> 
+            <p>Terms & Conditions</p>
+            <p>Sitemap</p>
+          </div>
+          <div class="col-md-3">
+            <p>Made with <i class="fa fa-heart" style="color: red;"></i> by Devtron Genesis</p>
+          </div>
+          <div class="col-md-4 footer-icon-style">
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-linkedin"></i>
+            <i class="fa fa-google-plus"></i>
+            <i class="fa fa-youtube"></i>
+            <i class="fa fa-vimeo"></i>
           </div>
         </div>
       </div>
     </footer>
-    <!-- End Footer -->
+    <!-- End Footer
 </body>
 </html>

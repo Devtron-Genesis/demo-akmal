@@ -6,12 +6,15 @@
     font-family: 'AvenirLTStd-BookOblique';
     src: url(../fonts/AvenirLTStd-Medium.otf);
 }
+body {
+    margin-top: 105px;
+}
 
 /* top-menu */
 .top-menu a {
     position: relative;
     left: 46%;
-    top: 21%;
+    top: -20%;
     padding: 0 11px;
     font-size: 14px;
     color: black;
@@ -20,6 +23,16 @@
 .navbar-light .navbar-nav .nav-link {
     color: rgba(0,0,0);
     padding: 0 12px;
+}
+.custom-btn{
+    padding: 3px 14px;
+}
+.dropdown-toggle::after {
+    display: none;
+}
+.dropdown-toggle i {
+    font-size: 12px;
+    padding-left: 6px;
 }
 @media only screen and (max-width: 580px){
     .top-menu{
@@ -33,7 +46,7 @@
     position: relative;
     background: url('../img/faq_page.jpg');
     min-height: 552px;
-    background-position: 43% 75%;
+    background-position: center center;
     }
 .showcase-head {
     margin: 117px 0;
@@ -111,15 +124,47 @@
 
 /* form section */
 .slope {
-    /* position: relative; */
     background-color: #629648;
-    height: 170vh;
-    clip-path: polygon(0 0, 100% 13%, 100% 75%, 75% 75%, 64% 75%, 50% 75%, 0% 75%);
+  }
+  .slope-skew{
+    background-color: #629648;
+    height: 100px;
+    transform: skewY(3deg);
+    position: relative;
+    top: 36px;
   }
   .slope .row {
-      padding-top: 210px;
+    padding: 100px 0;
+    margin: 0 100px;
   }
-  .slope h3, .slope p, .slope .form-control, .slope .btn, footer {
+  .slope h3, .slope p, .slope .form-control, .slope .btn, footer, nav, .showcase-style, .tabs-style, #accordian {
       font-family: AvenirLTStd-BookOblique;
   }
 /* end form section */
+
+/* footer */
+footer {
+    background-color: #F7F7F7;
+}
+.footer-style p {
+    display: inline-block;
+    padding-right: 15px;
+}
+.footer-icon-style i {
+    padding: 0 9px;
+}
+.footer-heading-style {
+    font-size: 19px;
+}
+footer .col-md-2 a {
+    line-height: 2;
+    display: block;
+    text-decoration: none;
+    color: #333b45;
+}
+#location-bg-image{
+    background-image: url(../img/rsz_world-map-146505_960_720.png);
+    background-size: cover;
+    background-color: #b76a6a00;
+}
+/* end footer */
