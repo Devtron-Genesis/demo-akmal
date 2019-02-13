@@ -1,3 +1,20 @@
+<?php
+  require_once('admin/config.php');
+  try {
+    $sql = "SELECT * FROM categories";
+    $categories = $pdo->query($sql);
+    $i=0;
+    $cat_name = array();
+    $cat_ids = array();
+    foreach ($categories as $item) {
+      $cat_name[$i] = $item['name'];
+      $cat_ids[$i] = $item['id'];
+      $i++;
+    }
+  } catch (PDOException $e) {
+    die("ERROR: Could not able to execute $sql. " . $e->getMessage());
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -117,7 +134,7 @@
                               </div>
                           </li>
                       </ul>
-                      <button class="btn btn-primary ml-2 custom-btn" type="button">Get Started</button>
+                      <a href="admin/login.php" class="btn btn-primary ml-2 custom-btn">Get Started</a>
                   </div>
                 </div>
             <!-- end top menu -->
@@ -258,11 +275,11 @@
             <h3 class="text-center text-white" style="font-size: 30px;">Could not find your question?</h3>
             <p class="text-center text-white lead">Send us your question.Please add your contact details, if we should inform you once your question<br>
             has been answered.</p>
-            <form>
+            <form action="admin/create-faq.php" method="post">
               <div class="form-row">
                 <div class="col-md-1"></div>
                 <div class="form-group col-md-10">
-                  <textarea class="form-control" rows="7" placeholder="Your question here"></textarea>
+                  <textarea name="textarea" class="form-control" rows="7" placeholder="Your question here"></textarea>
                 </div>
                 <div class="col-md-1"></div>
                 <div class="col-md-1"></div>
@@ -275,10 +292,13 @@
                 <div class="col-md-1"></div>
                 <div class="col-md-4"></div>
                 <div class="form-group col-md-4">
-                  <select class="form-control">
-                    <option selected>-Select Category-</option>
-                    <option>1</option>
-                    <option>2</option>
+                  <select class="form-control" name="catIds">
+                    <option disabled selected value="0">-Select Category-</option>
+                    <?php for ($i=0; $i < count($cat_name) ; $i++) { ?>
+                      <option value="<?=$cat_ids[$i];?>">
+                        <?php echo $cat_name[$i] ?>
+                      </option>
+                    <?php } ?>
                   </select>
                 </div>
                 <div class="col-md-4"></div>
