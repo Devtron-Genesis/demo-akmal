@@ -279,20 +279,20 @@
               <div class="form-row">
                 <div class="col-md-1"></div>
                 <div class="form-group col-md-10">
-                  <textarea name="textarea" class="form-control" rows="7" placeholder="Your question here"></textarea>
+                  <textarea name="question" class="form-control" rows="7" placeholder="Your question here" required></textarea>
                 </div>
                 <div class="col-md-1"></div>
                 <div class="col-md-1"></div>
                 <div class="form-group col-md-5">
-                  <input type="text" name="name" class="form-control" placeholder="Name">
+                  <input type="text" name="name" class="form-control" placeholder="Name" required>
                 </div>
                 <div class="form-group col-md-5">
-                  <input type="email" name="email" class="form-control" placeholder="Email">
+                  <input type="email" name="email" class="form-control" placeholder="Email" required>
                 </div>
                 <div class="col-md-1"></div>
                 <div class="col-md-4"></div>
                 <div class="form-group col-md-4">
-                  <select class="form-control" name="catIds">
+                  <select class="form-control" name="cat_id" required>
                     <option disabled selected value="0">-Select Category-</option>
                     <?php for ($i=0; $i < count($cat_name) ; $i++) { ?>
                       <option value="<?=$cat_ids[$i];?>">

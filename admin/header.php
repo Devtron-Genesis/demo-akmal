@@ -28,6 +28,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
+  <!-- Custom styles for this page -->
+  <link href="css/dataTables.bootstrap4.min.css" rel="stylesheet">
+
 </head>
 
 <body id="page-top">
@@ -73,9 +76,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Question Operations:</h6>
-            <a class="collapse-item" href="">All Questions</a>
-            <a class="collapse-item" href="#">Edit Question</a>
-            <a class="collapse-item" href="#">Answer the Question</a>
+            <a class="collapse-item" href="all-questions.php">All Questions</a>
           </div>
         </div>
       </li>
