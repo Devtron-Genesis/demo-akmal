@@ -1,5 +1,6 @@
 <?php
   require_once('admin/config.php');
+  session_start();
   try {
     $sql = "SELECT * FROM categories";
     $categories = $pdo->query($sql);
@@ -157,6 +158,10 @@
     </section>
     <!-- end showcase -->
 
+    <!-- Flash Messages -->
+      <?php
+        flash_messages();
+      ?>
     <!-- tabs -->
     <section class="pt-5 pb-2">
       <div class="container">

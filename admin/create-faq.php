@@ -1,5 +1,6 @@
 <?php
 require_once("config.php");
+session_start();
 $name = $email = $question = $cat_id = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $cat_id = trim($_POST["cat_id"]);
@@ -21,10 +22,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $param_question = $question;
         // Attempt to execute the prepared statement
         if ($stmt->execute()) {
+            $_SESSION['success'] = "Thanks. We will review your question and respond as soon as possible.";
             header("location: ../index.php");
             exit();
         } else {
-            echo "Something went wrong. Please try again later.";
+            $_SESSION['error'] = "Something went wrong. Please try again later.";
+            header("location: ../index.php");
+            exit();
         }
     }
     // Close statement

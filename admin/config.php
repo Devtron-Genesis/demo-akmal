@@ -14,4 +14,22 @@ try {
 } catch (PDOException $e) {
     die("Error: could not connect. " . $e->getMessage());
 }
+// Flash Messages
+function flash_messages()
+{
+    if (isset($_SESSION['success'])) { ?>
+        <div class="alert alert-success in">
+            <a href="#" class="close" data-dismiss="alert">&times;</a>
+            <strong>Success! </strong> <?=$_SESSION['success']?>
+        </div>
+   <?php }
+   unset($_SESSION['success']);
+   if (isset($_SESSION['error'])) { ?>
+       <div class="alert alert-danger in">
+           <a href="#" class="close" data-dismiss="alert">&times;</a>
+           <strong>Error! </strong> <?=$_SESSION['error']?>
+       </div>
+   <?php }
+   unset($_SESSION['error']);
+}
 ?>

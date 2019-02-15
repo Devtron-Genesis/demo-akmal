@@ -20,10 +20,6 @@ if ($stmt = $pdo->prepare($sql)) {
     }
 }
 unset($stmt);
-$sql = "SELECT * FROM answers WHERE q_id = :id";
-if ($stmt = $pdo->prepare($sql)) {
-    $stmt->bindParam(":q_id", $param_q_id);
-}
 unset($pdo);
 ?>
     <!-- Begin Page Content -->

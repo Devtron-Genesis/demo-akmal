@@ -1,5 +1,6 @@
 <?php
 require_once('config.php');
+session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = trim($_POST['id']);
     $cat_id = trim($_POST['cat_id']);
@@ -19,11 +20,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $param_question = $question;
         $param_id = $id;
         if ($stmt->execute()) {
-            echo "Question updated successfully!";
+            $_SESSION['success'] = "Question updated successfully!";
             header("location: all-questions.php");
             exit();
         } else {
-            echo "Something went wrong. Please try again later.";
+            $_SESSION['error'] = "Something went wrong. Please try again later.";
+            header("location: all-questions.php");
+            exit();
         }
     }
     unset($pdo);

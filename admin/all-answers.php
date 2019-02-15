@@ -2,21 +2,21 @@
 require_once('header.php');
 // Include config file
 require_once('config.php');
-$sql = "SELECT * FROM categories";
-$categories = $pdo->query($sql);
+$sql = "SELECT id,question FROM faq";
+$faq = $pdo->query($sql);
 $i=0;
-$cat_name = array();
-$cat_ids = array();
-foreach ($categories as $item) {
-  $cat_name[$i] = $item['name'];
-  $cat_ids[$i] = $item['id'];
+$faq_ids = array();
+$faqs = array();
+foreach ($faq as $item) {
+    $faq_ids[$i] = $item['id'];
+    $faqs[$i] = $item['question'];
   $i++;}
 ?>
 <!-- Begin Page Content -->
     <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">All Questions</h1>
+          <h1 class="h3 mb-2 text-gray-800">All Answers</h1>
           <hr>
           <?php
           flash_messages();
@@ -26,13 +26,13 @@ foreach ($categories as $item) {
           <!-- DataTales -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Questions</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Answers</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
                   <?php
                   // Attempt select query execution
-                  $sql = "SELECT * FROM faq";
+                  $sql = "SELECT * FROM answers";
                   if ($result = $pdo->query($sql)) {
                       if ($result->rowCount() > 0) {
                           echo "<table class='table table-bordered' id='dataTable' width='100%' cellspacing='0'>";
@@ -40,9 +40,6 @@ foreach ($categories as $item) {
                                 echo "<tr>";
                                     echo "<th>#</th>";
                                     echo "<th>Question</th>";
-                                    echo "<th>Category</th>";
-                                    echo "<th>User Name</th>";
-                                    echo "<th>User Email</th>";
                                     echo "<th>Answer</th>";
                                     echo "<th>Action</th>";
                                 echo "</tr>";
@@ -51,23 +48,14 @@ foreach ($categories as $item) {
                             while ($row = $result->fetch()) {
                                 echo "<tr>";
                                     echo "<td>" . $row['id'] . "</td>";
-                                    echo "<td>" . $row['question'] . "</td>";
-                                    for ($i=0; $i < count($cat_name); $i++) { 
-                                        if ($row['cat_id'] == $cat_ids[$i]) {
-                                            echo "<td>" . $cat_name[$i] . "</td>";
+                                    for ($i=0; $i < count($faq_ids); $i++) { 
+                                        if ($row['q_id'] == $faq_ids[$i]) {
+                                            echo "<td>" . $faqs[$i] . "</td>";
                                         }
                                     }
-                                    echo "<td>" . $row['name'] . "</td>";
-                                    echo "<td>" . $row['email'] . "</td>";
-                                    echo "<td>"  if (empty($row['answer'])) {
-                                      echo "There is no answer for this question";
-                                    } else {
-                                      $row['answer'];
-                                    }  "</td>";
+                                    echo "<td>" . $row['answer'] . "</td>";
                                     echo "<td>";
-                                        echo "<a href='edit.php?id=". $row['id'] ."' class='btn btn-success mr-3' title='Edit and Answer the question' data-toggle='tooltip'><span class='fas fa-fw fa-edit'></span></a>";
-                                        echo "<a href='delete.php?id=". $row['id'] ."' class='btn btn-danger mr-3' title='Delete Question' data-toggle='tooltip' onclick='javascript:confrimationDelete($(this));return false;'><span class='fas fa-fw fa-trash'></span></a>";
-                                        // echo "<a href='answer.php?id=". $row['id'] ."' class='btn btn-info' title='Answer the Question' data-toggle='tooltip'><span class='fas fa-fw fa-clipboard-check'></span></a>";
+                                        echo "<a href='edit-answer.php?id=". $row['id'] ."' class='btn btn-success mr-3' title='Edit Answer' data-toggle='tooltip'><span class='fas fa-fw fa-edit'></span></a>";
                                     echo "</td>";
                                 echo "</tr>";
                             }
