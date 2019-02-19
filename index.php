@@ -12,6 +12,20 @@
       $cat_ids[$i] = $item['id'];
       $i++;
     }
+    $sql = "SELECT * FROM faq WHERE answer Is Not NULL ORDER BY id DESC";
+    $all_questions = $pdo->query($sql);
+    $questions_ids_array = array();
+    $questions_cat_ids_array = array();
+    $questions_questions_array = array();
+    $questions_answers_array = array();
+    $indexCount = 0;
+    foreach ($all_questions as $item) {
+        $questions_ids_array[$indexCount] = $item['id'];
+        $questions_cat_ids_array[$indexCount] = $item['cat_id'];
+        $questions_questions_array[$indexCount] = $item['question'];
+        $questions_answers_array[$indexCount] = $item['answer'];
+        $indexCount++;
+    }
   } catch (PDOException $e) {
     die("ERROR: Could not able to execute $sql. " . $e->getMessage());
   }
@@ -33,19 +47,69 @@
     <script>
       $(function(){
         $("#getting-started-accordian").hide();
+        $("#solution-accordian").hide();
+        $("#technology-accordian").hide();
+        $("#company-accordian").hide();
         $("#the-basic").find('p i').css('color', 'white');
         $("#the-basic").click(function(){
           $("#the-basic-accordian").show(500);
           $("#getting-started-accordian").hide(500);
+          $("#solution-accordian").hide(500);
+          $("#technology-accordian").hide(500);
+          $("#company-accordian").hide(500);
           $(this).children('.tabs-style').addClass('active').find('i').css('color','white');
           $("#getting-started").children('.tabs-style').removeClass('active').find('i').css('color','black');
+          $("#solution").children('.tabs-style').removeClass('active').find('i').css('color','black');
+          $("#technology").children('.tabs-style').removeClass('active').find('i').css('color','black');
+          $("#company").children('.tabs-style').removeClass('active').find('i').css('color','black');
         });
         $("#getting-started").click(function(){
           $("#the-basic-accordian").hide(500);
           $("#getting-started-accordian").show(500);
-          $(this).children('.tabs-style').addClass('active');
-          $(this).find('p i').css('color', 'white');
+          $("#solution-accordian").hide(500);
+          $("#technology-accordian").hide(500);
+          $("#company-accordian").hide(500);
+          $(this).children('.tabs-style').addClass('active').find('i').css('color','white');
           $("#the-basic").children('.tabs-style').removeClass('active').find('i').css('color','black');
+          $("#solution").children('.tabs-style').removeClass('active').find('i').css('color','black');
+          $("#technology").children('.tabs-style').removeClass('active').find('i').css('color','black');
+          $("#company").children('.tabs-style').removeClass('active').find('i').css('color','black');
+        });
+        $("#solution").click(function(){
+          $("#the-basic-accordian").hide(500);
+          $("#getting-started-accordian").hide(500);
+          $("#solution-accordian").show(500);
+          $("#technology-accordian").hide(500);
+          $("#company-accordian").hide(500);
+          $(this).children('.tabs-style').addClass('active').find('i').css('color','white');
+          $("#the-basic").children('.tabs-style').removeClass('active').find('i').css('color','black');
+          $("#getting-started").children('.tabs-style').removeClass('active').find('i').css('color','black');
+          $("#technology").children('.tabs-style').removeClass('active').find('i').css('color','black');
+          $("#company").children('.tabs-style').removeClass('active').find('i').css('color','black');
+        });
+        $("#technology").click(function(){
+          $("#the-basic-accordian").hide(500);
+          $("#getting-started-accordian").hide(500);
+          $("#solution-accordian").hide(500);
+          $("#technology-accordian").show(500);
+          $("#company-accordian").hide(500);
+          $(this).children('.tabs-style').addClass('active').find('i').css('color','white');
+          $("#the-basic").children('.tabs-style').removeClass('active').find('i').css('color','black');
+          $("#getting-started").children('.tabs-style').removeClass('active').find('i').css('color','black');
+          $("#solution").children('.tabs-style').removeClass('active').find('i').css('color','black');
+          $("#company").children('.tabs-style').removeClass('active').find('i').css('color','black');
+        });
+        $("#company").click(function(){
+          $("#the-basic-accordian").hide(500);
+          $("#getting-started-accordian").hide(500);
+          $("#solution-accordian").hide(500);
+          $("#technology-accordian").hide(500);
+          $("#company-accordian").show(500);
+          $(this).children('.tabs-style').addClass('active').find('i').css('color','white');
+          $("#the-basic").children('.tabs-style').removeClass('active').find('i').css('color','black');
+          $("#getting-started").children('.tabs-style').removeClass('active').find('i').css('color','black');
+          $("#technology").children('.tabs-style').removeClass('active').find('i').css('color','black');
+          $("#solution").children('.tabs-style').removeClass('active').find('i').css('color','black');
         });
       });
     </script>
@@ -169,7 +233,7 @@
           <div class="col" id="the-basic">
             <p class="tabs-style active">
               <i class="fa fa-tv"></i><br><br>
-              The Basic
+              The Basics
             </p>
           </div>
           <div class="col" id="getting-started">
@@ -198,74 +262,121 @@
           </div>
         </div>
         <!-- accordian row -->
-
-        <!-- The Basic Accordian -->
-        <div class="row" id="the-basic-accordian">
-          <div id="accordian">
-            <div class="card">
-              <div class="card-header">
-                <a href="#menu1" class="card-link" data-toggle="collapse" aria-expanded="true" aria-controls="menu1">
-                  Menu 1 <span class="collapsed"><p class="accordian-signs"><b>+</b></p></span>
-                  <span class="expanded"><p class="accordian-signs"><b>-</b></p></span>
-                </a>
-              </div>
-              <div id="menu1" class="collapse show">
-                <div class="card-body">
-                    Taj Mahal is built on the banks of river Yamuna and is surrounded by a beautiful garden. Mughal Emperor Shah Jahan constructed it for the commemoration of his wife Mumtaz Mahal. The construction was started in 1631 and in 1643, the construction of main building was completed. The construction of the whole complex was completed in 1653. Mumtaz Mahal is buried in Taj Mahal.
-                </div>
-              </div>
-            </div>
-            <!-- <br> -->
-            <div class="card">
-              <div class="card-header">
-                <a href="#menu2" class="card-link" data-toggle="collapse" aria-expanded="false" aria-controls="menu2">
-                  Menu 2 <span class="collapsed"><p class="accordian-signs"><b>+</b></p></span>
-                  <span class="expanded"><p class="accordian-signs"><b>-</b></p></span>
-                </a>
-              </div>
-              <div id="menu2" class="collapse">
-                <div class="card-body">
-                  Taj Mahal is built on the banks of river Yamuna and is surrounded by a beautiful garden. Mughal Emperor Shah Jahan constructed it for the commemoration of his wife Mumtaz Mahal. The construction was started in 1631 and in 1643, the construction of main building was completed. The construction of the whole complex was completed in 1653. Mumtaz Mahal is buried in Taj Mahal.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End  The Basic Accordian -->
-
-        <!-- Getting Started Accordian -->
-        <div class="row" id="getting-started-accordian">
-            <div id="accordian">
-              <div class="card">
-                <div class="card-header">
-                  <a href="#menu3" class="card-link" data-toggle="collapse" aria-expanded="true" aria-controls="menu3">
-                    Menu 3 <span class="collapsed"><p class="accordian-signs"><b>+</b></p></span>
-                    <span class="expanded"><p class="accordian-signs"><b>-</b></p></span>
-                  </a>
-                </div>
-                <div id="menu3" class="collapse show">
-                  <div class="card-body">
-                      Taj Mahal is built on the banks of river Yamuna and is surrounded by a beautiful garden. Mughal Emperor Shah Jahan constructed it for the commemoration of his wife Mumtaz Mahal. The construction was started in 1631 and in 1643, the construction of main building was completed. The construction of the whole complex was completed in 1653. Mumtaz Mahal is buried in Taj Mahal.
+            <!-- The Basic Accordian -->
+              <div class="row" id="the-basic-accordian">
+              <?php
+                for ($i=0; $i < count($questions_ids_array) ; $i++) { 
+                  if ($questions_cat_ids_array[$i] == 1) { ?>
+                  <div id="accordian">
+                    <div class="card">
+                      <div class="card-header">
+                        <a href="#<?=$questions_ids_array[$i]?>" class="card-link" data-toggle="collapse" aria-expanded="true" aria-controls="<?=$questions_ids_array[$i]?>">
+                        <?=$questions_questions_array[$i]?> <span class="collapsed"><p class="accordian-signs"><b>-</b></p></span>
+                          <span class="expanded"><p class="accordian-signs"><b>+</b></p></span>
+                        </a>
+                      </div>
+                      <div id="<?=$questions_ids_array[$i]?>" class="collapse">
+                        <div class="card-body">
+                          <?=$questions_answers_array[$i]?>
+                        </div>
+                      </div>
+                    </div>
                   </div>
+                  <?php } ?>
+                  <?php   } ?>
                 </div>
-              </div>
-              <!-- <br> -->
-              <div class="card">
-                <div class="card-header">
-                  <a href="#menu4" class="card-link" data-toggle="collapse" aria-expanded="false" aria-controls="menu3">
-                    Menu 4 <span class="collapsed"><p class="accordian-signs"><b>+</b></p></span>
-                    <span class="expanded"><p class="accordian-signs"><b>-</b></p></span>
-                  </a>
-                </div>
-                <div id="menu4" class="collapse">
-                  <div class="card-body">
-                    Taj Mahal is built on the banks of river Yamuna and is surrounded by a beautiful garden. Mughal Emperor Shah Jahan constructed it for the commemoration of his wife Mumtaz Mahal. The construction was started in 1631 and in 1643, the construction of main building was completed. The construction of the whole complex was completed in 1653. Mumtaz Mahal is buried in Taj Mahal.
+              <!-- The Getting Started Accordian -->
+              <div class="row" id="getting-started-accordian">
+              <?php
+                for ($i=0; $i < count($questions_ids_array) ; $i++) { 
+                  if ($questions_cat_ids_array[$i] == 2) { ?>
+                  <div id="accordian">
+                    <div class="card">
+                      <div class="card-header">
+                        <a href="#<?=$questions_ids_array[$i]?>" class="card-link" data-toggle="collapse" aria-expanded="true" aria-controls="menu1">
+                        <?=$questions_questions_array[$i]?> <span class="collapsed"><p class="accordian-signs"><b>-</b></p></span>
+                          <span class="expanded"><p class="accordian-signs"><b>+</b></p></span>
+                        </a>
+                      </div>
+                      <div id="<?=$questions_ids_array[$i]?>" class="collapse">
+                        <div class="card-body">
+                          <?=$questions_answers_array[$i]?>
+                        </div>
+                      </div>
+                    </div>
                   </div>
+                  <?php } ?>
+                  <?php   } ?>
                 </div>
-              </div>
-            </div>
-          </div>
-        <!-- End Getting Started Accordian -->
+              <!-- Solution Accordian -->
+              <div class="row" id="solution-accordian">
+              <?php
+                for ($i=0; $i < count($questions_ids_array) ; $i++) { 
+                  if ($questions_cat_ids_array[$i] == 5) { ?>
+                  <div id="accordian">
+                    <div class="card">
+                      <div class="card-header">
+                        <a href="#<?=$questions_ids_array[$i]?>" class="card-link" data-toggle="collapse" aria-expanded="true" aria-controls="menu1">
+                        <?=$questions_questions_array[$i]?> <span class="collapsed"><p class="accordian-signs"><b>-</b></p></span>
+                          <span class="expanded"><p class="accordian-signs"><b>+</b></p></span>
+                        </a>
+                      </div>
+                      <div id="<?=$questions_ids_array[$i]?>" class="collapse">
+                        <div class="card-body">
+                          <?=$questions_answers_array[$i]?>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <?php } ?>
+                  <?php   } ?>
+                </div>
+              <!-- Technology Accordian -->
+              <div class="row" id="technology-accordian">
+              <?php
+                for ($i=0; $i < count($questions_ids_array) ; $i++) { 
+                  if ($questions_cat_ids_array[$i] == 6) { ?>
+                  <div id="accordian">
+                    <div class="card">
+                      <div class="card-header">
+                        <a href="#<?=$questions_ids_array[$i]?>" class="card-link" data-toggle="collapse" aria-expanded="true" aria-controls="menu1">
+                        <?=$questions_questions_array[$i]?> <span class="collapsed"><p class="accordian-signs"><b>-</b></p></span>
+                          <span class="expanded"><p class="accordian-signs"><b>+</b></p></span>
+                        </a>
+                      </div>
+                      <div id="<?=$questions_ids_array[$i]?>" class="collapse">
+                        <div class="card-body">
+                          <?=$questions_answers_array[$i]?>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <?php } ?>
+                  <?php   } ?>
+                </div>
+              <!-- Company Accordian -->
+              <div class="row" id="company-accordian">
+              <?php
+                for ($i=0; $i < count($questions_ids_array) ; $i++) { 
+                  if ($questions_cat_ids_array[$i] == 7) { ?>
+                  <div id="accordian">
+                    <div class="card">
+                      <div class="card-header">
+                        <a href="#<?=$questions_ids_array[$i]?>" class="card-link" data-toggle="collapse" aria-expanded="true" aria-controls="menu1">
+                        <?=$questions_questions_array[$i]?> <span class="collapsed"><p class="accordian-signs"><b>-</b></p></span>
+                          <span class="expanded"><p class="accordian-signs"><b>+</b></p></span>
+                        </a>
+                      </div>
+                      <div id="<?=$questions_ids_array[$i]?>" class="collapse">
+                        <div class="card-body">
+                          <?=$questions_answers_array[$i]?>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <?php } ?>
+                  <?php   } ?>
+                </div>
         <!-- end accordian row -->
       </div>
     </section>

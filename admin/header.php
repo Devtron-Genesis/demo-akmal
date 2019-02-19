@@ -71,26 +71,12 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-question"></i>
-          <span>Questions</span>
+          <span>Questions & Answers</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Question Operations:</h6>
-            <a class="collapse-item" href="all-questions.php">All Questions</a>
-          </div>
-        </div>
-      </li>
-
-      <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-          <i class="fas fa-fw fa-clipboard-check"></i>
-          <span>Answers</span>
-        </a>
-        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Answer Operations:</h6>
-            <a class="collapse-item" href="all-answers.php">All Answers</a>
+            <a class="collapse-item" href="all-questions.php">All Questions & Answers</a>
           </div>
         </div>
       </li>
@@ -105,7 +91,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
       <!-- Nav Item - Charts -->
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="user.php">
           <i class="fas fa-fw fa-user"></i>
           <span>Users</span></a>
       </li>

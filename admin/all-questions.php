@@ -51,19 +51,19 @@ foreach ($categories as $item) {
                             while ($row = $result->fetch()) {
                                 echo "<tr>";
                                     echo "<td>" . $row['id'] . "</td>";
-                                    echo "<td>" . $row['question'] . "</td>";
+                                    echo "<td>" . substr($row['question'], 0, 15) . "..." . "</td>";
                                     for ($i=0; $i < count($cat_name); $i++) { 
                                         if ($row['cat_id'] == $cat_ids[$i]) {
                                             echo "<td>" . $cat_name[$i] . "</td>";
                                         }
                                     }
-                                    echo "<td>" . $row['name'] . "</td>";
-                                    echo "<td>" . $row['email'] . "</td>";
-                                    echo "<td>"  if (empty($row['answer'])) {
-                                      echo "There is no answer for this question";
+                                    echo "<td>" . substr($row['name'], 0, 10)  . "..." . "</td>";
+                                    echo "<td>" . substr($row['email'], 0, 10)  . "..." . "</td>";
+                                    if ($row['answer'] == NULL) {
+                                      echo "<td> No Answer </td>";
                                     } else {
-                                      $row['answer'];
-                                    }  "</td>";
+                                     echo "<td>" . substr($row['answer'], 0, 15) . "..." . "</td>";
+                                    } 
                                     echo "<td>";
                                         echo "<a href='edit.php?id=". $row['id'] ."' class='btn btn-success mr-3' title='Edit and Answer the question' data-toggle='tooltip'><span class='fas fa-fw fa-edit'></span></a>";
                                         echo "<a href='delete.php?id=". $row['id'] ."' class='btn btn-danger mr-3' title='Delete Question' data-toggle='tooltip' onclick='javascript:confrimationDelete($(this));return false;'><span class='fas fa-fw fa-trash'></span></a>";

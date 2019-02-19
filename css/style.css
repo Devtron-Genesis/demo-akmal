@@ -26,6 +26,8 @@ body {
 }
 .custom-btn{
     padding: 3px 14px;
+    background-color: #148ecf;
+    border-color: #148ecf;
 }
 .dropdown-toggle::after {
     display: none;

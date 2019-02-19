@@ -24,6 +24,7 @@ try {
                 $cat_id = $row['cat_id'];
                 $name = $row['name'];
                 $email = $row['email'];
+                $answer = $row['answer'];
             } else {
                 header("location: error.php");
                 exit();
@@ -44,7 +45,7 @@ try {
     <!-- Begin Page Content -->
     <div class="container-fluid">
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800">Edit Question</h1>
+        <h1 class="h3 mb-2 text-gray-800">Edit Question and Submit Answer</h1>
         <hr>
         <div class="row justify-content-center">
             <div class="col-xl-10 col-lg-12 col-md-9">
@@ -53,16 +54,24 @@ try {
                         <input type="hidden" name="id" class="form-control" value="<?=$id?>">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="name" class="form-control" value="<?=$name?>" placeholder="Name" required>
+                        <label for="name" class="h4 text-dark">Name:</label>
+                        <input type="text" id="name" name="name" class="form-control" value="<?=$name?>" placeholder="Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" name="email" class="form-control" value="<?=$email?>" placeholder="Email" required>
+                        <label for="email" class="h4 text-dark">Email:</label>
+                        <input type="email" id="email" name="email" class="form-control" value="<?=$email?>" placeholder="Email" required>
                     </div>
                     <div class="form-group">
-                        <textarea name="question" id="customTextarea" rows="4" class="form-control" required placeholder="Question?"><?=$question?></textarea>
+                        <label for="question" class="h4 text-dark">Question:</label>
+                        <textarea name="question" id="question" rows="4" class="form-control" required placeholder="Question?"><?=$question?></textarea>
                     </div>
                     <div class="form-group">
-                        <select name="cat_id" class="form-control" required>
+                        <label for="answer" class="h4 text-dark">Anaswer:</label>
+                        <textarea name="answer" id="answer" rows="10" class="form-control" required placeholder="Answer"><?=$answer?></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="category" class="h4 text-dark">Categories:</label>
+                        <select name="cat_id" class="form-control" id="category" required>
                             <option disabled selected value="0">-Select Category-</option>
                             <?php for ($i=0; $i < count($cat_name); $i++) { ?>
                                 <option <?php if ($cat_ids[$i] == $cat_id) {
@@ -76,7 +85,7 @@ try {
                         </select>
                     </div>
                     <div class="form-group">
-                        <input type="submit" value="Update Question" class="btn btn-success">
+                        <input type="submit" value="Update Question and Submit Answer" class="btn btn-success">
                         <a href="all-questions.php" class="btn btn-danger">Cancel</a>
                     </div>
                 </form>
