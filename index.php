@@ -44,6 +44,7 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/navbar-fixed.js"></script>
+    <script src="admin/js/jquery.easing.js"></script>
     <script>
       $(function(){
         $("#getting-started-accordian").hide();
@@ -113,16 +114,47 @@
         });
       });
     </script>
+    <script>
+      $(function(){
+        "use strict";
+        // Scroll to top button appear
+        $(document).on('scroll', function() {
+          var scrollDistance = $(this).scrollTop();
+          if (scrollDistance > 1) {
+            // $('.navbar-brand img').css('width', '80px');
+            $('.top-menu').slideUp();
+            $('nav.navbar').removeClass('scrollUpHeight');
+            $('nav.navbar').addClass('scrollDownHeight');
+            $('.scroll-to-top').fadeIn();
+          } else if (scrollDistance < 1) {
+            // $('.navbar-brand img').css('width', '120px');
+            $('.top-menu').slideDown();
+            $('nav.navbar').removeClass('scrollDownHeight');
+            $('nav.navbar').addClass('scrollUpHeight');
+            $('.scroll-to-top').fadeOut();
+          }
+        });
+
+        // Smooth scrolling using jQuery easing
+        $(document).on('click', 'a.scroll-to-top', function(e) {
+          var $anchor = $(this);
+          $('html, body').stop().animate({
+            scrollTop: ($($anchor.attr('href')).offset().top)
+          }, 1000, 'easeInOutExpo');
+          e.preventDefault();
+        });
+      });
+  </script>
 </head>
-<body>
+<body id="page-top">
   <!-- Navbar -->
-    <nav class="navbar navbar-expand-sm navbar-light bg-white py-2 fixed-top">
+    <nav class="navbar navbar-expand-sm navbar-light bg-white py-2 sticky-top scrollUpHeight">
         <div class="container">
-            <a href="index.php" class="navbar-expand">
-                <img src="img/logo.png" style="width: 120px; height:65px;" alt="logo img">
+            <a href="index.php" class="navbar-brand">
+                <img src="img/logo.png" alt="logo img">
             </a>
             <!-- Top Menu -->
-            <div class="container-fluid mt-4">
+            <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-6"></div>
                     <div class="col-md-6 top-menu">
@@ -262,120 +294,135 @@
           </div>
         </div>
         <!-- accordian row -->
-            <!-- The Basic Accordian -->
+              <!-- The Basic Accordian -->
               <div class="row" id="the-basic-accordian">
-              <?php
-                for ($i=0; $i < count($questions_ids_array) ; $i++) { 
-                  if ($questions_cat_ids_array[$i] == 1) { ?>
-                  <div id="accordian">
-                    <div class="card">
-                      <div class="card-header">
-                        <a href="#<?=$questions_ids_array[$i]?>" class="card-link" data-toggle="collapse" aria-expanded="true" aria-controls="<?=$questions_ids_array[$i]?>">
-                        <?=$questions_questions_array[$i]?> <span class="collapsed"><p class="accordian-signs"><b>-</b></p></span>
-                          <span class="expanded"><p class="accordian-signs"><b>+</b></p></span>
-                        </a>
-                      </div>
-                      <div id="<?=$questions_ids_array[$i]?>" class="collapse">
-                        <div class="card-body">
-                          <?=$questions_answers_array[$i]?>
+              <div class="accordion" id="faqAccordion">
+                <?php
+                  for ($i=0; $i < count($questions_ids_array) ; $i++) { 
+                    if ($questions_cat_ids_array[$i] == 1) { ?>
+                      <div class="card">
+                        <div class="card-header">
+                          <h2 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#<?=$questions_ids_array[$i]?>"
+                            aria-expanded="true" aria-controls="<?=$questions_ids_array[$i]?>">
+                            <?=$questions_questions_array[$i]?> <span class="collapsed"><p class="accordion-signs"><b>+</b></p></span>
+                            <span class="expanded"><p class="accordion-signs"><b>&times;</b></p></span>
+                            </button>
+                          </h2>
+                        </div>
+                        <div id="<?=$questions_ids_array[$i]?>" class="collapse" data-parent="#faqAccordion">
+                          <div class="card-body">
+                            <?=$questions_answers_array[$i]?>
+                          </div>
                         </div>
                       </div>
-                    </div>
+                    <?php } ?>
+                    <?php   } ?>
                   </div>
-                  <?php } ?>
-                  <?php   } ?>
                 </div>
               <!-- The Getting Started Accordian -->
               <div class="row" id="getting-started-accordian">
-              <?php
-                for ($i=0; $i < count($questions_ids_array) ; $i++) { 
-                  if ($questions_cat_ids_array[$i] == 2) { ?>
-                  <div id="accordian">
-                    <div class="card">
-                      <div class="card-header">
-                        <a href="#<?=$questions_ids_array[$i]?>" class="card-link" data-toggle="collapse" aria-expanded="true" aria-controls="menu1">
-                        <?=$questions_questions_array[$i]?> <span class="collapsed"><p class="accordian-signs"><b>-</b></p></span>
-                          <span class="expanded"><p class="accordian-signs"><b>+</b></p></span>
-                        </a>
-                      </div>
-                      <div id="<?=$questions_ids_array[$i]?>" class="collapse">
-                        <div class="card-body">
-                          <?=$questions_answers_array[$i]?>
+              <div class="accordion" id="faqAccordion1">
+                <?php
+                  for ($i=0; $i < count($questions_ids_array) ; $i++) { 
+                    if ($questions_cat_ids_array[$i] == 2) { ?>
+                      <div class="card">
+                        <div class="card-header">
+                          <h2 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#<?=$questions_ids_array[$i]?>"
+                            aria-expanded="true" aria-controls="<?=$questions_ids_array[$i]?>">
+                            <?=$questions_questions_array[$i]?> <span class="collapsed"><p class="accordion-signs"><b>+</b></p></span>
+                            <span class="expanded"><p class="accordion-signs"><b>&times;</b></p></span>
+                            </button>
+                          </h2>
+                        </div>
+                        <div id="<?=$questions_ids_array[$i]?>" class="collapse" data-parent="#faqAccordion1">
+                          <div class="card-body">
+                            <?=$questions_answers_array[$i]?>
+                          </div>
                         </div>
                       </div>
-                    </div>
+                    <?php } ?>
+                    <?php   } ?>
                   </div>
-                  <?php } ?>
-                  <?php   } ?>
                 </div>
               <!-- Solution Accordian -->
               <div class="row" id="solution-accordian">
-              <?php
-                for ($i=0; $i < count($questions_ids_array) ; $i++) { 
-                  if ($questions_cat_ids_array[$i] == 5) { ?>
-                  <div id="accordian">
-                    <div class="card">
-                      <div class="card-header">
-                        <a href="#<?=$questions_ids_array[$i]?>" class="card-link" data-toggle="collapse" aria-expanded="true" aria-controls="menu1">
-                        <?=$questions_questions_array[$i]?> <span class="collapsed"><p class="accordian-signs"><b>-</b></p></span>
-                          <span class="expanded"><p class="accordian-signs"><b>+</b></p></span>
-                        </a>
-                      </div>
-                      <div id="<?=$questions_ids_array[$i]?>" class="collapse">
-                        <div class="card-body">
-                          <?=$questions_answers_array[$i]?>
+              <div class="accordion" id="faqAccordion2">
+                <?php
+                  for ($i=0; $i < count($questions_ids_array) ; $i++) { 
+                    if ($questions_cat_ids_array[$i] == 5) { ?>
+                      <div class="card">
+                        <div class="card-header">
+                          <h2 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#<?=$questions_ids_array[$i]?>"
+                            aria-expanded="true" aria-controls="<?=$questions_ids_array[$i]?>">
+                            <?=$questions_questions_array[$i]?> <span class="collapsed"><p class="accordion-signs"><b>+</b></p></span>
+                            <span class="expanded"><p class="accordion-signs"><b>&times;</b></p></span>
+                            </button>
+                          </h2>
+                        </div>
+                        <div id="<?=$questions_ids_array[$i]?>" class="collapse" data-parent="#faqAccordion2">
+                          <div class="card-body">
+                            <?=$questions_answers_array[$i]?>
+                          </div>
                         </div>
                       </div>
-                    </div>
+                    <?php } ?>
+                    <?php   } ?>
                   </div>
-                  <?php } ?>
-                  <?php   } ?>
                 </div>
               <!-- Technology Accordian -->
               <div class="row" id="technology-accordian">
-              <?php
-                for ($i=0; $i < count($questions_ids_array) ; $i++) { 
-                  if ($questions_cat_ids_array[$i] == 6) { ?>
-                  <div id="accordian">
-                    <div class="card">
-                      <div class="card-header">
-                        <a href="#<?=$questions_ids_array[$i]?>" class="card-link" data-toggle="collapse" aria-expanded="true" aria-controls="menu1">
-                        <?=$questions_questions_array[$i]?> <span class="collapsed"><p class="accordian-signs"><b>-</b></p></span>
-                          <span class="expanded"><p class="accordian-signs"><b>+</b></p></span>
-                        </a>
-                      </div>
-                      <div id="<?=$questions_ids_array[$i]?>" class="collapse">
-                        <div class="card-body">
-                          <?=$questions_answers_array[$i]?>
+              <div class="accordion" id="faqAccordion3">
+                <?php
+                  for ($i=0; $i < count($questions_ids_array) ; $i++) { 
+                    if ($questions_cat_ids_array[$i] == 6) { ?>
+                      <div class="card">
+                        <div class="card-header">
+                          <h2 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#<?=$questions_ids_array[$i]?>"
+                            aria-expanded="true" aria-controls="<?=$questions_ids_array[$i]?>">
+                            <?=$questions_questions_array[$i]?> <span class="collapsed"><p class="accordion-signs"><b>+</b></p></span>
+                            <span class="expanded"><p class="accordion-signs"><b>&times;</b></p></span>
+                            </button>
+                          </h2>
+                        </div>
+                        <div id="<?=$questions_ids_array[$i]?>" class="collapse" data-parent="#faqAccordion3">
+                          <div class="card-body">
+                            <?=$questions_answers_array[$i]?>
+                          </div>
                         </div>
                       </div>
-                    </div>
+                    <?php } ?>
+                    <?php   } ?>
                   </div>
-                  <?php } ?>
-                  <?php   } ?>
                 </div>
               <!-- Company Accordian -->
               <div class="row" id="company-accordian">
-              <?php
-                for ($i=0; $i < count($questions_ids_array) ; $i++) { 
-                  if ($questions_cat_ids_array[$i] == 7) { ?>
-                  <div id="accordian">
-                    <div class="card">
-                      <div class="card-header">
-                        <a href="#<?=$questions_ids_array[$i]?>" class="card-link" data-toggle="collapse" aria-expanded="true" aria-controls="menu1">
-                        <?=$questions_questions_array[$i]?> <span class="collapsed"><p class="accordian-signs"><b>-</b></p></span>
-                          <span class="expanded"><p class="accordian-signs"><b>+</b></p></span>
-                        </a>
-                      </div>
-                      <div id="<?=$questions_ids_array[$i]?>" class="collapse">
-                        <div class="card-body">
-                          <?=$questions_answers_array[$i]?>
+              <div class="accordion" id="faqAccordion4">
+                <?php
+                  for ($i=0; $i < count($questions_ids_array) ; $i++) { 
+                    if ($questions_cat_ids_array[$i] == 7) { ?>
+                      <div class="card">
+                        <div class="card-header">
+                          <h2 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#<?=$questions_ids_array[$i]?>"
+                            aria-expanded="true" aria-controls="<?=$questions_ids_array[$i]?>">
+                            <?=$questions_questions_array[$i]?> <span class="collapsed"><p class="accordion-signs"><b>+</b></p></span>
+                            <span class="expanded"><p class="accordion-signs"><b>&times;</b></p></span>
+                            </button>
+                          </h2>
+                        </div>
+                        <div id="<?=$questions_ids_array[$i]?>" class="collapse" data-parent="#faqAccordion4">
+                          <div class="card-body">
+                            <?=$questions_answers_array[$i]?>
+                          </div>
                         </div>
                       </div>
-                    </div>
+                    <?php } ?>
+                    <?php   } ?>
                   </div>
-                  <?php } ?>
-                  <?php   } ?>
                 </div>
         <!-- end accordian row -->
       </div>
@@ -443,15 +490,15 @@
             <p>Locations</p>
             <div class="row ml-2" id="location-bg-image">
               <div class="col-md-6">
-                <p class="small">Vienna<br>
-                  London <br>
-                  New York<br>
-                  Wroclaw</p>
+                <a href="#" class="small">Vienna</a>
+                <a href="#" class="small">London</a>
+                <a href="#" class="small">New York</a>
+                <a href="#" class="small">Wroclaw</a>
               </div>
               <div class="col-md-6">
-                <p class="small">Sunnywale<br>
-                  Milano<br>
-                  Monterrey</p>
+                <a href="#" class="small">Sunnywale</a>
+                <a href="#" class="small">Milano</a>
+                <a href="#" class="small">Monterrey</a>
               </div>
             </div>    
           </div>
@@ -494,24 +541,29 @@
         </div>
         <div class="row pt-5">
           <div class="col-md-5 footer-style">
-            <p>Privacy & Cookie Policy</p> 
-            <p>Terms & Conditions</p>
-            <p>Sitemap</p>
+            <a href="#">Privacy & Cookie Policy</a> 
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Sitemap</a>
           </div>
           <div class="col-md-3">
             <p>Made with <i class="fa fa-heart" style="color: red;"></i> by Devtron Genesis</p>
           </div>
           <div class="col-md-4 footer-icon-style">
-            <i class="fa fa-twitter"></i>
-            <i class="fa fa-facebook"></i>
-            <i class="fa fa-linkedin"></i>
-            <i class="fa fa-google-plus"></i>
-            <i class="fa fa-youtube"></i>
-            <i class="fa fa-vimeo"></i>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-google-plus"></i></a>
+            <a href="#"><i class="fa fa-youtube"></i></a>
+            <a href="#"><i class="fa fa-vimeo"></i></a>
           </div>
         </div>
       </div>
     </footer>
     <!-- End Footer -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up" style="font-weight: 900;"></i>
+    </a>
 </body>
 </html>

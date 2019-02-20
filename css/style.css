@@ -7,7 +7,11 @@
     src: url(../fonts/AvenirLTStd-Medium.otf);
 }
 body {
-    margin-top: 105px;
+    /* margin-top: 105px; */
+    margin: 0;
+}
+.navbar-light .navbar-nav .nav-link:hover, .dropdown-item:hover, .top-menu a:hover, footer .col-md-2 a:hover, #location-bg-image a:hover, .footer-style a:hover, .footer-icon-style a i:hover{
+    color: rgb(98, 149, 72);
 }
 
 /* top-menu */
@@ -37,8 +41,8 @@ body {
     padding-left: 6px;
 }
 @media only screen and (max-width: 580px){
-    .top-menu{
-        display: none;
+    nav .row{
+        display: none !important;
     }
 }
 /* end top-menu */
@@ -67,6 +71,32 @@ body {
     font-family: rabionead;
     font-weight: 500;
 }
+.scrollDownHeight{
+    height: 60px;
+    transition-duration: .5s;
+    transition-timing-function: ease-in-out;
+    /* transition-delay: 1s;  */
+}
+.scrollDownHeight img {
+    width: 80px;
+    transition-duration: .5s;
+    transition-timing-function: ease-in-out;
+}
+.scrollUpHeight{
+    height: 80px;
+    transition-duration: .5s;
+    transition-timing-function: ease-in-out;
+    /* transition-delay: 1s; */
+}
+.scrollUpHeight img{
+    width: 120px;
+    transition-duration: .5s;
+    transition-timing-function: ease-in-out;
+}
+
+/* .sticky-offset {
+    top:56px;
+} */
 /* end main banner */
 
 /* tabs */
@@ -98,7 +128,7 @@ body {
 .card{
     border-radius: 0;
 }
-.accordian-signs{
+.accordion-signs{
     position: absolute;
     top: 5px;
     right: 20px;
@@ -118,9 +148,20 @@ body {
 [aria-expanded="false"] > .expanded, [aria-expanded="true"] > .collapsed {
     display: none;
 }
-#accordian{
+.accordion{
     margin: 0 14px;
     width: 100%;
+}
+#the-basic-accordian, #getting-started-accordian, #solution-accordian, #technology-accordian, #company-accordian {
+    padding: 20px 0;
+}
+.accordion .btn-link {
+    color: black;
+    text-decoration: none;
+}
+.accordion .btn-link:hover {
+    color: black;
+    text-decoration: none;
 }
 /* end accordian */
 
@@ -139,7 +180,7 @@ body {
     padding: 100px 0;
     margin: 0 100px;
   }
-  .slope h3, .slope p, .slope .form-control, .slope .btn, footer, nav, .showcase-style, .tabs-style, #accordian {
+  .slope h3, .slope p, .slope .form-control, .slope .btn, footer, nav, .showcase-style, .tabs-style, .accordion {
       font-family: AvenirLTStd-BookOblique;
   }
   input[type="submit"] {
@@ -158,12 +199,14 @@ body {
 footer {
     background-color: #F7F7F7;
 }
-.footer-style p {
-    display: inline-block;
+.footer-style a {
     padding-right: 15px;
+    color: #333b45;
+    text-decoration: none;
 }
-.footer-icon-style i {
+.footer-icon-style a i {
     padding: 0 9px;
+    color: #333b45;
 }
 .footer-heading-style {
     font-size: 19px;
@@ -178,5 +221,25 @@ footer .col-md-2 a {
     background-image: url(../img/rsz_world-map-146505_960_720.png);
     background-size: cover;
     background-color: #b76a6a00;
+}
+#location-bg-image a {
+    display: block;
+    color: #333b45;
+    line-height: 2;
+    text-decoration: none;
+}
+.scroll-to-top {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    display: none;
+    width: 38px;
+    height: 38px;
+    text-align: center;
+    color: #fff;
+    background: rgba(90,92,105,.8);
+    line-height: 40px;
+    font-size: 27px;
+    font-weight: 900;
 }
 /* end footer */
