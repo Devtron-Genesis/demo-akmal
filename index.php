@@ -118,7 +118,7 @@
       $(function(){
         "use strict";
         // Scroll to top button appear
-        $(document).on('scroll', function() {
+          $(document).on('scroll', function() {
           var scrollDistance = $(this).scrollTop();
           if (scrollDistance > 1) {
             // $('.navbar-brand img').css('width', '80px');
@@ -134,7 +134,6 @@
             $('.scroll-to-top').fadeOut();
           }
         });
-
         // Smooth scrolling using jQuery easing
         $(document).on('click', 'a.scroll-to-top', function(e) {
           var $anchor = $(this);
@@ -148,13 +147,12 @@
 </head>
 <body id="page-top">
   <!-- Navbar -->
-    <nav class="navbar navbar-expand-sm navbar-light bg-white py-2 sticky-top scrollUpHeight">
+    <nav class="navbar navbar-expand-md navbar-light bg-white py-2 sticky-top scrollUpHeight">
         <div class="container">
             <a href="index.php" class="navbar-brand">
                 <img src="img/logo.png" alt="logo img">
             </a>
             <!-- Top Menu -->
-            <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-6"></div>
                     <div class="col-md-6 top-menu">
@@ -162,7 +160,6 @@
                       <a href="#">Careers</a>
                       <a href="#">Contact</a>
                     </div>
-                  </div>
                   <button class="navbar-toggler" data-toggle="collapse" data-target="#demo-nav">
                       <span class="navbar-toggler-icon"></span>
                   </button>
@@ -233,7 +230,7 @@
                       </ul>
                       <a href="admin/login.php" class="btn btn-primary ml-2 custom-btn">Get Started</a>
                   </div>
-                </div>
+                  </div>
             <!-- end top menu -->
         </div>
     </nav>
@@ -262,31 +259,31 @@
     <section class="pt-5 pb-2">
       <div class="container">
         <div class="row">
-          <div class="col" id="the-basic">
+          <div class="five-colums" id="the-basic">
             <p class="tabs-style active">
               <i class="fa fa-tv"></i><br><br>
               The Basics
             </p>
           </div>
-          <div class="col" id="getting-started">
+          <div class="five-colums" id="getting-started">
             <p class="tabs-style">
                 <i class="fa fa-map"></i><br><br>
                 Getting Started
             </p>
           </div>
-          <div class="col" id="solution">
+          <div class="five-colums" id="solution">
             <p class="tabs-style">
               <i class="fa fa-newspaper-o"></i><br><br>
               Solution
             </p>
           </div>
-          <div class="col" id="technology">
+          <div class="five-colums" id="technology">
             <p class="tabs-style">
               <i class="fa fa-dropbox"></i><br><br>
               Technology
             </p>
           </div>
-          <div class="col" id="company">
+          <div class="five-colums" id="company">
             <p class="tabs-style">
               <i class="fa fa-users"></i><br><br>
               Company
@@ -303,11 +300,11 @@
                       <div class="card">
                         <div class="card-header">
                           <h2 class="mb-0">
-                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#<?=$questions_ids_array[$i]?>"
+                            <a data-toggle="collapse" data-target="#<?=$questions_ids_array[$i]?>"
                             aria-expanded="true" aria-controls="<?=$questions_ids_array[$i]?>">
                             <?=$questions_questions_array[$i]?> <span class="collapsed"><p class="accordion-signs"><b>+</b></p></span>
                             <span class="expanded"><p class="accordion-signs"><b>&times;</b></p></span>
-                            </button>
+                            </a>
                           </h2>
                         </div>
                         <div id="<?=$questions_ids_array[$i]?>" class="collapse" data-parent="#faqAccordion">
@@ -329,11 +326,11 @@
                       <div class="card">
                         <div class="card-header">
                           <h2 class="mb-0">
-                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#<?=$questions_ids_array[$i]?>"
+                            <a data-toggle="collapse" data-target="#<?=$questions_ids_array[$i]?>"
                             aria-expanded="true" aria-controls="<?=$questions_ids_array[$i]?>">
                             <?=$questions_questions_array[$i]?> <span class="collapsed"><p class="accordion-signs"><b>+</b></p></span>
                             <span class="expanded"><p class="accordion-signs"><b>&times;</b></p></span>
-                            </button>
+                            </a>
                           </h2>
                         </div>
                         <div id="<?=$questions_ids_array[$i]?>" class="collapse" data-parent="#faqAccordion1">
@@ -355,11 +352,11 @@
                       <div class="card">
                         <div class="card-header">
                           <h2 class="mb-0">
-                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#<?=$questions_ids_array[$i]?>"
+                            <a data-toggle="collapse" data-target="#<?=$questions_ids_array[$i]?>"
                             aria-expanded="true" aria-controls="<?=$questions_ids_array[$i]?>">
                             <?=$questions_questions_array[$i]?> <span class="collapsed"><p class="accordion-signs"><b>+</b></p></span>
                             <span class="expanded"><p class="accordion-signs"><b>&times;</b></p></span>
-                            </button>
+                            </a>
                           </h2>
                         </div>
                         <div id="<?=$questions_ids_array[$i]?>" class="collapse" data-parent="#faqAccordion2">
@@ -381,11 +378,11 @@
                       <div class="card">
                         <div class="card-header">
                           <h2 class="mb-0">
-                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#<?=$questions_ids_array[$i]?>"
+                            <a data-toggle="collapse" data-target="#<?=$questions_ids_array[$i]?>"
                             aria-expanded="true" aria-controls="<?=$questions_ids_array[$i]?>">
                             <?=$questions_questions_array[$i]?> <span class="collapsed"><p class="accordion-signs"><b>+</b></p></span>
                             <span class="expanded"><p class="accordion-signs"><b>&times;</b></p></span>
-                            </button>
+                            </a>
                           </h2>
                         </div>
                         <div id="<?=$questions_ids_array[$i]?>" class="collapse" data-parent="#faqAccordion3">
@@ -407,11 +404,11 @@
                       <div class="card">
                         <div class="card-header">
                           <h2 class="mb-0">
-                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#<?=$questions_ids_array[$i]?>"
+                            <a data-toggle="collapse" data-target="#<?=$questions_ids_array[$i]?>"
                             aria-expanded="true" aria-controls="<?=$questions_ids_array[$i]?>">
                             <?=$questions_questions_array[$i]?> <span class="collapsed"><p class="accordion-signs"><b>+</b></p></span>
                             <span class="expanded"><p class="accordion-signs"><b>&times;</b></p></span>
-                            </button>
+                            </a>
                           </h2>
                         </div>
                         <div id="<?=$questions_ids_array[$i]?>" class="collapse" data-parent="#faqAccordion4">
@@ -434,14 +431,14 @@
       <div class="slope-skew"></div>
       <div class="container-fluid slope">
         <div class="row">
-          <div class="col">
-            <h3 class="text-center text-white" style="font-size: 30px;">Could not find your question?</h3>
+          <div class="col-sm-12 col-md-12">
+            <h3 class="text-center text-white">Could not find your question?</h3>
             <p class="text-center text-white lead">Send us your question.Please add your contact details, if we should inform you once your question<br>
             has been answered.</p>
             <form action="admin/create-faq.php" method="post">
               <div class="form-row">
                 <div class="col-md-1"></div>
-                <div class="form-group col-md-10">
+                <div class="form-group col-sm-12 col-md-10">
                   <textarea name="question" class="form-control" rows="7" placeholder="Your question here" required></textarea>
                 </div>
                 <div class="col-md-1"></div>
@@ -483,7 +480,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-4">
-            <img src="img/logo.png" alt="footer logo" style="height: 40px; width: 80px;"><br><br> 
+            <img src="img/logo.png" alt="footer logo" style="width: 80px;"><br><br> 
             <p class="text-dark text-justify">We are an internationa technology company with the mission to help people make more confident decisions and choose products they'll love.</p>
             <p class="text-dark">&copy;2019 Devtron Genesis.</p>
             <p>All rights reserved</p>
@@ -495,7 +492,7 @@
                 <a href="#" class="small">New York</a>
                 <a href="#" class="small">Wroclaw</a>
               </div>
-              <div class="col-md-6">
+              <div class="col-xs-6 col-md-6">
                 <a href="#" class="small">Sunnywale</a>
                 <a href="#" class="small">Milano</a>
                 <a href="#" class="small">Monterrey</a>
