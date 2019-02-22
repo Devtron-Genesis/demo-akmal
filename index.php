@@ -142,8 +142,13 @@
           }, 1000, 'easeInOutExpo');
           e.preventDefault();
         });
+        $('ul.navbar-nav li.dropdown').hover(function(){
+          $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);},
+          function() {
+            $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+          });
       });
-  </script>
+    </script>
 </head>
 <body id="page-top">
   <!-- Navbar -->
@@ -154,8 +159,8 @@
             </a>
             <!-- Top Menu -->
                 <div class="row">
-                    <div class="col-md-6"></div>
-                    <div class="col-md-6 top-menu">
+                    <div class="col-md-6 col-lg-6"></div>
+                    <div class="col-md-6 col-lg-6 top-menu">
                       <a href="#">Comapny</a>
                       <a href="#">Careers</a>
                       <a href="#">Contact</a>
@@ -479,7 +484,7 @@
     <footer class="pt-5">
       <div class="container">
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-8 col-lg-4">
             <img src="img/logo.png" alt="footer logo" style="width: 80px;"><br><br> 
             <p class="text-dark text-justify">We are an internationa technology company with the mission to help people make more confident decisions and choose products they'll love.</p>
             <p class="text-dark">&copy;2019 Devtron Genesis.</p>
@@ -499,7 +504,7 @@
               </div>
             </div>    
           </div>
-          <div class="col-md-2">
+          <div class="col-md-4 col-lg-2">
             <h5 class="footer-heading-style">Our Products</h5>
             <a href="#">Commerce & Sales</a>
             <a href="#">Marketing</a>
@@ -508,7 +513,7 @@
             <a href="#">Omnichannel</a>
             <a href="#">Examples</a>
           </div>
-          <div class="col-md-2">
+          <div class="col-md-4 col-lg-2">
             <h5 class="footer-heading-style">Industry Solutions</h5>
             <a href="#">Retail </a>
             <a href="#">Brand Manufaturing</a>
@@ -518,7 +523,7 @@
             <a href="#">Banking and Finance</a>
             <a href="#">Premium Services</a>
           </div>
-          <div class="col-md-2">
+          <div class="col-md-4 col-lg-2">
             <h5 class="footer-heading-style">Company</h5>
             <a href="#">Management</a>
             <a href="#">Careers</a>
@@ -528,7 +533,7 @@
             <a href="#">Technology</a>
             <a href="#">Technology Updates</a>
           </div>
-          <div class="col-md-2">
+          <div class="col-md-4 col-lg-2">
             <h5 class="footer-heading-style"> Get in Touch </h5>
             <a href="#">Contact</a>
             <a href="#">FAQ</a>
