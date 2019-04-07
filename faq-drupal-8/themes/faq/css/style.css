@@ -1,0 +1,267 @@
+/**
+ * Place your custom styles here.
+ */
+/* style for everyone */
+.ui-widget{
+    font-family: 'AvenirLTStd-Book';
+    font-style: normal;
+}
+.region-content {
+    padding: 0;
+}
+#block-footer .col-lg-2 a:hover, #location-bg-img a:hover, .footer-style a:hover, .footer-icon-style a i:hover, .menu-base-theme li a:hover, #block-topmenu ul li a:hover, .menu-item--expanded ul li a:hover{
+    color: #629548;
+}
+/* Main Navigation */
+.menu-base-theme {
+    background: none;
+}
+.navbar {
+    border-radius: 0;
+}
+.brand.logo img {
+    width: 120px;
+    margin: 0 70px;
+    margin-top: 17px;
+}
+.main-header nav.topnav.navbar-default {
+    border-bottom: 0;
+    padding: 6px 0;
+}
+nav#block-topmenu {
+    float: right;
+}
+nav#block-faq-main-menu {
+    clear: both;
+}
+ul.menu {
+    display: flex;
+}
+.region-primary-menu {
+    float: none;
+}
+#block-topmenu ul li a {
+    padding: 0 13px;
+}
+.region-primary-menu, .menu-base-theme li a {
+    background: #fff;
+    color: #000000;
+    text-transform: none;
+    font-size: 16px;
+    font-weight: 600;
+}
+.menu-base-theme a {
+    padding: 11px 20px;
+}
+.menu-base-theme li a.is-active {
+    background: white;
+    color: black;
+}
+.menu-base-theme a, .menu-base-theme a:hover, .menu-base-theme a:focus, .menu-base-theme a:active, .menu-base-theme a.highlighted {
+    padding: 11px 20px;
+    background: white;
+    color: black;
+    font-weight: 500;
+}
+.add-chevrown-down-icon i {
+    padding-left: 8px;
+    font-size: 12px;
+}
+/* .menu-base-theme a span.sub-arrow {
+  border-color: black transparent transparent transparent;
+  top: 22px;
+}
+.menu-base-theme a:hover span.sub-arrow, .menu-base-theme a:focus span.sub-arrow, .menu-base-theme a:active span.sub-arrow, .menu-base-theme a.highlighted span.sub-arrow {
+  border-color: black transparent transparent transparent;
+} */
+.menu-button-style {
+    background-color: #148ecf !important;
+    padding: 10px 24px !important;
+    border-radius: 8px;
+    color: white !important;
+    font-size: 19px !important;
+}
+.main-header {
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+}
+.scrollDownHeight{
+    padding: 0 !important;
+}
+.scrollDownHeight nav#block-faq-main-menu{
+    margin: 19px 0 0 35px;
+}
+.scrollDownHeight .brand.logo img{
+    width: 80px;
+    transition-duration: .5s;
+    transition-timing-function: ease-in-out;
+}
+.scrollUpHeight .brand.logo img{
+    width: 120px;
+    transition-duration: .5s;
+    transition-timing-function: ease-in-out;
+}
+/* Main Banner */
+.main-bg-img {
+    background-image: url(/sites/default/files/faq_page.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 521px;
+}
+.main-bg-img .col-md-7 {
+    margin: 117px 0;
+}
+.main-bg-img h2 {
+    background-color: #629648;
+    font-size: 47px;
+    text-align: center;
+    padding: 22px 0;
+    color: white;
+    font-weight: 600;
+}
+.main-bg-img p {
+    text-align: center;
+    font-size: 40px;
+    font-family: 'rabionead';
+    padding-top: 20px;
+}
+/* Tabs */
+.form-radios .form-radios div:first-child {
+    display: none;
+}
+.bef-exposed-form .form--inline .form-item {
+    float: left;
+}
+.view-content {
+    float: left;
+    padding: 50px 80px 20px 50px;
+    width: 100%;
+}
+.form-item-tid .option {
+    background-color: #EBEAEF;
+    display: block;
+    text-align: center;
+    padding: 24px 45px;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 0 22px;
+}
+.form-item-tid .option i{
+    font-size: 36px;
+}
+.form-radios .form-radios div input{
+    display: none;
+}
+.ui-accordion .ui-accordion-header {
+    margin: 0px 0 0 0;
+    padding: 1.5em 0.5em 1.5em 1.7em;
+    font-size: 115%;
+    border-radius: 0;
+    width: 100%;
+}
+.form-item-tid input[checked="checked"] + label{
+    color: white;
+    background-color: #629648;
+}
+/* Form */
+#block-webform {
+    clear: both;
+    background-color: #629648;
+    margin: 0 -17px;
+    padding: 80px;
+}
+div#block-slopeskew {
+    clear: both;
+    background-color: #629548;
+    height: 100px;
+    transform: skewY(3deg);
+    margin: 0 -17px;
+    position: relative;
+    top: 34px;
+}
+#edit-faq-question--description p {
+    color: white;
+}
+#edit-faq-question--description h3 {
+    font-size: 30px;
+    color: white;
+    font-weight: 600;
+}
+#edit-select-category {
+    width: 35%;
+    position: relative;
+    left: 32%;
+}
+input[type="submit"] {
+    color: #629548;
+    font-size: 18px;
+    background-color: white;
+    padding: 11px 15px;
+    border: 1px solid #629548;
+    border-radius: 5px;
+    position: relative;
+    left: 43%;
+}
+input[type="submit"]:hover{
+    background-color: #629548;
+    color: white;
+    border-color: white;
+}
+/* footer */
+.footer-space {
+    padding: 20px 0;
+    background-color: #F7F7F7;
+}
+.custom-color-style {
+    color: #343A3F;
+    font-size: 16px;
+}
+.footer-heading-style {
+    font-size: 17px;
+    font-weight: 600;
+}
+#block-footer .col-lg-2 a {
+    color: #343A3F;
+    font-size: 16px;
+    line-height: 2;
+    display: block;
+}
+.footer-space .container {
+    max-width: 1100px;
+}
+#location-bg-img {
+    background-image: url(/sites/default/files/rsz_world-map-146505_960_720.png);
+    background-size: cover;
+    background-color: #b76a6a00;
+    margin-left: 10px;
+}
+#location-bg-img a {
+    display: block;
+    color: #343A3F;
+    font-size: 14px;
+    line-height: 2;
+}
+.footer-style a {
+    color: #343A3F;
+    padding-right: 10px;
+    font-size: 16px;
+}
+#block-footer .col-md-3 {
+    font-size: 16px;
+}
+.footer-icon-style a i {
+    color: #333439;
+    padding: 0 9px;
+    font-size: 18px;
+}
+#footer-bottom {
+    display: none;
+}
+/* back to top */
+#backtotop {
+    height: 40px;
+    width: 40px;
+    border-radius: 5px;
+}
+

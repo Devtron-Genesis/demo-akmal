@@ -1,0 +1,9 @@
+global-styling:
+  css:
+    theme:
+      css/style.css: {}
+      css/jquery.minimalTabs.css: {}
+
+  js:
+    js/custom.js: {}
+    js/jquery.minimalTabs.js: {}
