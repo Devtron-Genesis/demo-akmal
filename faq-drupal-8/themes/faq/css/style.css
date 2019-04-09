@@ -21,7 +21,7 @@
 }
 .brand.logo img {
     width: 120px;
-    margin: 0 70px;
+    margin: 0 70px 0 0 ;
     margin-top: 17px;
 }
 .main-header nav.topnav.navbar-default {
@@ -47,7 +47,7 @@ ul.menu {
     background: #fff;
     color: #000000;
     text-transform: none;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
 }
 .menu-base-theme a {
@@ -55,7 +55,7 @@ ul.menu {
 }
 .menu-base-theme li a.is-active {
     background: white;
-    color: black;
+    color: black !important;
 }
 .menu-base-theme a, .menu-base-theme a:hover, .menu-base-theme a:focus, .menu-base-theme a:active, .menu-base-theme a.highlighted {
     padding: 11px 20px;
@@ -66,6 +66,9 @@ ul.menu {
 .add-chevrown-down-icon i {
     padding-left: 8px;
     font-size: 12px;
+}
+.topnav .container {
+    max-width: 1175px;
 }
 /* .menu-base-theme a span.sub-arrow {
   border-color: black transparent transparent transparent;
@@ -87,20 +90,27 @@ ul.menu {
     z-index: 1020;
 }
 .scrollDownHeight{
-    padding: 0 !important;
+    padding: 10px 0 0 0!important;
 }
 .scrollDownHeight nav#block-faq-main-menu{
-    margin: 19px 0 0 35px;
+    /*margin: 19px 0 0 35px;*/
 }
 .scrollDownHeight .brand.logo img{
     width: 80px;
     transition-duration: .5s;
     transition-timing-function: ease-in-out;
+    margin-top: 0;
 }
 .scrollUpHeight .brand.logo img{
     width: 120px;
     transition-duration: .5s;
     transition-timing-function: ease-in-out;
+    position: relative;
+    top: 12px;
+    margin-top: 0;
+}
+.main-header .region {
+    float: right;
 }
 /* Main Banner */
 .main-bg-img {
@@ -132,17 +142,18 @@ ul.menu {
 }
 .bef-exposed-form .form--inline .form-item {
     float: left;
+    width: 19%;
 }
 .view-content {
     float: left;
-    padding: 50px 80px 20px 50px;
+    padding: 50px 80px 20px 80px;
     width: 100%;
 }
 .form-item-tid .option {
     background-color: #EBEAEF;
     display: block;
     text-align: center;
-    padding: 24px 45px;
+    padding: 24px;
     font-size: 20px;
     cursor: pointer;
     margin: 0 22px;
@@ -155,10 +166,17 @@ ul.menu {
 }
 .ui-accordion .ui-accordion-header {
     margin: 0px 0 0 0;
-    padding: 1.5em 0.5em 1.5em 1.7em;
-    font-size: 115%;
+    padding: 22px;
+    font-size: 120%;
+    font-weight: 600;
     border-radius: 0;
     width: 100%;
+}
+.ui-accordion .ui-accordion-content {
+    font-size: 16px;
+}
+.ui-icon-plusthick, .ui-icon-closethick {
+    float: right;
 }
 .form-item-tid input[checked="checked"] + label{
     color: white;
@@ -190,8 +208,7 @@ div#block-slopeskew {
 }
 #edit-select-category {
     width: 35%;
-    position: relative;
-    left: 32%;
+    margin: 0 auto;
 }
 input[type="submit"] {
     color: #629548;
@@ -200,17 +217,31 @@ input[type="submit"] {
     padding: 11px 15px;
     border: 1px solid #629548;
     border-radius: 5px;
-    position: relative;
-    left: 43%;
 }
 input[type="submit"]:hover{
     background-color: #629548;
     color: white;
     border-color: white;
 }
+.form-control {
+    font-size: 17px;
+    line-height: 1.5;
+    font-weight: 600;
+    color: #495057;
+}
+#edit-name, #edit-email {
+    padding: 23px 15px;
+}
+div#edit-actions {
+    text-align: center;
+}
+form#webform-submission-faq-form-node-36-add-form {
+    width: 80%;
+    margin: 0 auto;
+}
 /* footer */
 .footer-space {
-    padding: 20px 0;
+    padding: 20px 0 0 0;
     background-color: #F7F7F7;
 }
 .custom-color-style {
@@ -221,7 +252,7 @@ input[type="submit"]:hover{
     font-size: 17px;
     font-weight: 600;
 }
-#block-footer .col-lg-2 a {
+#block-footer .col-lg-4 a {
     color: #343A3F;
     font-size: 16px;
     line-height: 2;
@@ -264,4 +295,128 @@ input[type="submit"]:hover{
     width: 40px;
     border-radius: 5px;
 }
-
+/* media queries for tablet */
+@media screen and (max-width: 1024px) {
+    .main-header nav.topnav.navbar-default {
+        padding: 6px 0 0 0;
+    }
+    .brand.logo img{
+        margin: 0;
+        width: 90px;
+        margin-top: 17px;
+        position: relative;
+        top: 5px;
+        right: 5px;
+    }
+    .region-primary-menu, .menu-base-theme li a {
+        font-size: 12px;
+    }
+    .scrollDownHeight .brand.logo img {
+        width: 80px;
+        transition-duration: .5s;
+        transition-timing-function: ease-in-out;
+        margin-top: 0;
+        top: 0;
+        right: 10px;
+    }
+    .scrollUpHeight .brand.logo img {
+        width: 90px;
+        top: 12px;
+         margin-top: 9px;
+        right: 15px;
+    }
+    .menu-base-theme a, .menu-base-theme a:hover, .menu-base-theme a:focus, .menu-base-theme a:active, .menu-base-theme a.highlighted {
+        padding: 11px 5px;
+    }
+    .menu-button-style {
+        padding: 9px 24px !important;
+        font-size: 14px !important;
+    }
+    .form-item-tid .option {
+        padding: 17px;
+        font-size: 19px;
+         margin: 0;
+    }
+    .bef-exposed-form .form--inline .form-item {
+        width: 24%;
+    }
+    /*#block-footer .col-md-8 img {*/
+    /*    position: relative;*/
+    /*    left: 35%;*/
+    /*}*/
+    #edit-select-category {
+        width: 50%;
+    }
+}
+/* media queries for mobile */
+@media screen and (max-width: 766px){
+    .navbar-default .navbar-toggle .icon-bar {
+        background-color: rgba(0,0,0,.5);
+    }
+    .navbar-default .navbar-toggle {
+        border: 1px solid rgba(0,0,0,.5);
+        padding: 10px 10px;
+    }
+    .scrollUpHeight .brand.logo img {
+        top: 0;
+    }
+    #block-topmenu {
+        display: none !important;
+    }
+    .menu-base-theme {
+         border-bottom: unset;
+        border-top: 2px solid rgba(0,0,0,.5);
+        margin: 6px 0 0 0;
+    }
+    .bef-exposed-form .form--inline .form-item {
+        width: 48%;
+    }
+    .form-item-tid .option {
+        padding: 20px;
+        font-size: 19px;
+        margin: 0 0px;
+    }
+    #edit-select-category, input[type="submit"] {
+         width: 100%;
+        position: relative;
+         left: 0;
+    }
+    #block-footer .col-md-8 img {
+        position: relative;
+        left: 35%;
+    }
+    .main-bg-img h2, .main-bg-img p {
+        font-size: 30px;
+    }
+    .menu-button-style {
+        color: #FFFFFF;
+    }
+    .main-header .region {
+        float: none;
+    }
+    .ui-accordion .ui-accordion-header {
+        padding: 9px;
+        font-size: 97%;
+    }
+    .view-content {
+        padding: 20px 0px 20px 0px;
+    }
+    .ui-accordion .ui-accordion-content {
+        padding: 9px;
+    }
+    .ui-accordion .ui-accordion-content {
+        font-size: 13px;
+    }
+    #block-webform {
+        padding: 30px;
+    }
+    form#webform-submission-faq-form-node-36-add-form {
+        width: unset;
+    }
+}
+/* media queries for small screens */
+@media screen and (max-width: 375px) {
+    .bef-exposed-form .form--inline .form-item {
+        width: 100%;
+    }
+}
